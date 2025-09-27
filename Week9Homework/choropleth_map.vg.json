@@ -5,7 +5,7 @@
   "height": 800,
   "projection": {"type": "equalEarth"},
   "data": {
-    "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/geoBoundaries-MYS-ADM1.topojson",
+    "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/malaysia_map.topojson",
     "format": {"type": "topojson", "feature": "my"}
   },
   "transform": [

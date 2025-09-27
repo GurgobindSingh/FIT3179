@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Malaysia House Affordability Index by State",
   "width": 1000,
-  "height": 800,
+  "height": 600,
   "projection": {"type": "equalEarth"},
   "data": {
     "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/malaysia_map.topojson",
@@ -42,16 +41,24 @@
           "Above 170"
         ],
         "range": [
-          "#440154",  
-          "#3b528b",  
-          "#21918c",  
-          "#5ec962",  
-          "#fde725",  
-          "#ffb000",  
-          "#ff6347"   
+          "#deebf7",
+          "#c6dbef",
+          "#9ecae1",
+          "#6baed6",
+          "#4292c6",
+          "#2171b5",
+          "#084594"  
         ]
       },
-      "legend": {"title": "House Affordability Index"}
+      "legend": {
+        "title": "House Affordability Index",
+        "titleFontSize": 18,
+        "labelFontSize": 14,
+        "symbolSize": 200,
+        "orient": "top-right",
+        "offset": 20,
+        "padding": 10
+      }
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/refs/heads/main/Week%209%20Homework/geoBoundaries-MYS-ADM0.topojson",   
+    "format": {
+      "type": "topojson",
+      "feature": "states"              
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",      
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/refs/heads/main/Week%209%20Homework/house_affordability.csv"
+        },
+        "key": "State",
+        "fields": ["house affordability index"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": "geoshape",
+  "encoding": {
+    "color": {
+      "field": "house affordability index (HAI)",
+      "type": "quantitative",
+      "scale": {"scheme": "reds"},
+      "legend": {
+        "title": "House Affordability Index",
+        "orient": "right"
+      }
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "house affordability index", "type": "quantitative", "format": ".2f"}
+    ]
+  }
+}

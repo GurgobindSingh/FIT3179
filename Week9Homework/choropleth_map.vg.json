@@ -3,7 +3,7 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/malaysia_map.topojson",
+    "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/refs/heads/main/Week9Homework/malaysia_map.topojson",
     "format": {
       "type": "topojson",
       "feature": "MYSADM1gbOpen"
@@ -14,7 +14,7 @@
       "lookup": "properties.shapeName",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/house_affordability.csv"
+          "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/refs/heads/main/Week9Homework/house_affordability.csv"
         },
         "key": "State",
         "fields": ["House Affordability Index (HAI)"]

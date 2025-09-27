@@ -15,13 +15,18 @@
       height: 600px;
       margin: auto;
     }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h2 style="text-align:center;">Malaysia House Affordability Map</h2>
+  <h2>Malaysia House Affordability Index by State</h2>
   <div id="choropleth_map"></div>
 
   <script type="text/javascript">
+    // Point to your Vega-Lite JSON spec
     var spec2 = "choropleth_map.vg.json";
     vegaEmbed('#choropleth_map', spec2).then(function(result) {
       // Vega view instance available as result.view

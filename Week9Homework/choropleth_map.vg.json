@@ -10,7 +10,7 @@
   },
   "transform": [
     {
-      "lookup": "properties.Name",
+      "lookup": "properties.name",
       "from": {
         "data": {
           "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/house_affordability.csv"
@@ -34,7 +34,7 @@
       "legend": {"title": "House Affordability Index"}
     },
     "tooltip": [
-      {"field": "properties.Name", "type": "nominal", "title": "State"},
+      {"field": "properties.name", "type": "nominal", "title": "State"},
       {"field": "HAI", "type": "quantitative", "format": ".2f"}
     ]
   }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Malaysia House Affordability Map</title>
+  
+  <!-- Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+  <style>
+    #choropleth_map {
+      width: 800px;
+      height: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Malaysia House Affordability Map</h2>
+  <div id="choropleth_map"></div>
+
+  <script type="text/javascript">
+    var spec2 = "choropleth_map.vg.json";
+    vegaEmbed('#choropleth_map', spec2).then(function(result) {
+      // Vega view instance available as result.view
+    }).catch(console.error);
+  </script>
+</body>
+</html>

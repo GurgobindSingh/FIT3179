@@ -18,20 +18,22 @@
         "key": "State",
         "fields": ["House Affordability Index (HAI)"]
       }
-    },
-    {"calculate": "datum['House Affordability Index (HAI)'] + 0.1", "as": "HAI"}
+    }
   ],
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "HAI",
+      "field": "House Affordability Index (HAI)",
       "type": "quantitative",
-      "scale": {"scheme": "reds"},
+      "scale": {
+        "scheme": "bluegreen",      
+        "interpolate": "hcl"  
+      },
       "legend": {"title": "House Affordability Index"}
     },
     "tooltip": [
       {"field": "properties.shapeName", "type": "nominal", "title": "State"},
-      {"field": "HAI", "type": "quantitative", "format": ".2f"}
+      {"field": "House Affordability Index (HAI)", "type": "quantitative", "format": ".2f"}
     ]
   }
 }

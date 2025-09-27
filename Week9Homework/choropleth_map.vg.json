@@ -6,7 +6,7 @@
   "projection": {"type": "equalEarth"},
   "data": {
     "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/malaysia_map.topojson",
-    "format": {"type": "topojson", "feature": "my"}
+    "format": {"type": "topojson", "feature": "malaysia"}
   },
   "transform": [
     {

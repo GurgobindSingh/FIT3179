@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Malaysia House Affordability Index by State",
-  "width": 800,
-  "height": 600,
+  "width": 1000,
+  "height": 800,
   "projection": {"type": "mercator", "scale": 2500, "translate": [400, 350]},
   "data": {
     "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/malaysia_map.topojson",

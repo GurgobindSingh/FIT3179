@@ -26,8 +26,10 @@
       "field": "HAI",
       "type": "quantitative",
       "scale": {
-        "scheme": "reds",      
-        "interpolate": "hcl"  
+        "scheme": {
+          "name": "reds",      
+          "extent": [0.2, 1.0] 
+        }
       },
       "legend": {"title": "House Affordability Index"}
     },

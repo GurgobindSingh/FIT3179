@@ -30,7 +30,11 @@
           }
         },
         {
-          "calculate": "datum['Relative House Price (%)'] <= 5 ? 'Very Low Price (≤5%)' : datum['Relative House Price (%)'] <= 7 ? 'Low Price (5–7%)' : datum['Relative House Price (%)'] <= 9 ? 'Moderate Price (7–9%)' : datum['Relative House Price (%)'] <= 11 ? 'High Price (9–11%)' : 'Very High Price (>11%)'",
+          "calculate": "isValid(datum['Relative House Price (%)']) ? datum['Relative House Price (%)'] : null",
+          "as": "HousePrice"
+        },
+        {
+          "calculate": "isValid(datum['Relative House Price (%)']) ? (datum['Relative House Price (%)'] <= 5 ? 'Very Low Price (≤5%)' : datum['Relative House Price (%)'] <= 7 ? 'Low Price (5–7%)' : datum['Relative House Price (%)'] <= 9 ? 'Moderate Price (7–9%)' : datum['Relative House Price (%)'] <= 11 ? 'High Price (9–11%)' : 'Very High Price (>11%)') : 'Data Not Available'",
           "as": "Price_Level"
         }
       ],
@@ -45,9 +49,10 @@
               "Low Price (5–7%)",
               "Moderate Price (7–9%)",
               "High Price (9–11%)",
-              "Very High Price (>11%)"
+              "Very High Price (>11%)",
+              "Data Not Available"
             ],
-            "range": ["#fee5d9", "#fcae91", "#fb6a4a", "#de2d26", "#a50f15"]
+            "range": ["#fee5d9", "#fcae91", "#fb6a4a", "#de2d26", "#a50f15", "#d9d9d9"]
           },
           "legend": {
             "title": "Relative House Price (%)",
@@ -61,7 +66,12 @@
         },
         "tooltip": [
           {"field": "properties.name", "type": "nominal", "title": "State"},
-          {"field": "Relative House Price (%)", "type": "quantitative", "format": ".2f", "title": "Relative House Price (%)"},
+          {
+            "field": "HousePrice",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Relative House Price (%)"
+          },
           {"field": "Price_Level", "type": "nominal", "title": "Price Category"}
         ]
       }

@@ -56,7 +56,7 @@
             "symbolSize": 400,
             "orient": "right",
             "direction": "vertical",
-            "translate": [0, 50]
+            "offset": 20
           }
         },
         "tooltip": [

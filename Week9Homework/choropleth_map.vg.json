@@ -3,7 +3,7 @@
   "width": 1000,
   "height": 600,
   "projection": {"type": "equalEarth"},
-  
+
   "layer": [
     {
       "data": {
@@ -53,11 +53,10 @@
             "title": "Relative House Price (%)",
             "titleFontSize": 14,
             "labelFontSize": 12,
-            "symbolSize": 500,
-            "orient": "bottom",
-            "direction": "horizontal",
-            "offset": 20,
-            "padding": 10
+            "symbolSize": 400,
+            "orient": "right",
+            "direction": "vertical",
+            "translate": [0, 50]
           }
         },
         "tooltip": [

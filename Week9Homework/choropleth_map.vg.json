@@ -47,7 +47,7 @@
               "High Price (9–11%)",
               "Very High Price (>11%)"
             ],
-            "range": ["#deebf7", "#c6dbef", "#9ecae1", "#3182bd", "#08519c"]
+            "range": ["#fee5d9", "#fcae91", "#fb6a4a", "#de2d26", "#a50f15"]
           },
           "legend": {
             "title": "Relative House Price (%)",

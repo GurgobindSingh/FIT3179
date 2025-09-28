@@ -38,14 +38,14 @@
   <div id="choropleth_map"></div>
 
   <script type="text/javascript">
-    // Path to your Vega-Lite JSON spec
+
     var spec2 = "choropleth_map.vg.json";  
 
     vegaEmbed('#choropleth_map', spec2, {
-      actions: false,  // removes editor link buttons
+      actions: false,  
       renderer: "canvas"
     }).then(function(result) {
-      // Vega view instance is in result.view
+
     }).catch(console.error);
   </script>
 

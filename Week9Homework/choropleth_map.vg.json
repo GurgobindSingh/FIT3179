@@ -12,58 +12,53 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/house_affordability.csv",
+          "url": "https://raw.githubusercontent.com/GurgobindSingh/FIT3179/main/Week9Homework/house_price_2022.csv",
           "format": {"type": "csv"}
         },
         "key": "State",
-        "fields": ["HAI"]
+        "fields": ["Relative House Price (%)"]
       }
     },
     {
-      "calculate": "datum.HAI == null ? null : (datum.HAI <= 70 ? 'Less than 70' : datum.HAI <= 90 ? '71 to 90' : datum.HAI <= 110 ? '91 to 110' : datum.HAI <= 130 ? '111 to 130' : datum.HAI <= 150 ? '131 to 150' : datum.HAI <= 170 ? '151 to 170' : 'Above 170')",
-      "as": "HAI_cat"
+      "calculate": "datum['Relative House Price (%)'] <= 5 ? 'Very Low Price (≤5%)' : datum['Relative House Price (%)'] <= 7 ? 'Low Price (5–7%)' : datum['Relative House Price (%)'] <= 9 ? 'Moderate Price (7–9%)' : datum['Relative House Price (%)'] <= 11 ? 'High Price (9–11%)' : 'Very High Price (>11%)'",
+      "as": "Price_Level"
     }
   ],
   "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.5},
   "encoding": {
     "color": {
-      "condition": {"test": "datum.HAI == null", "value": "#eeeeee"},
-      "field": "HAI_cat",
-      "type": "nominal",
+      "field": "Price_Level",
+      "type": "ordinal",
       "scale": {
         "domain": [
-          "Less than 70",
-          "71 to 90",
-          "91 to 110",
-          "111 to 130",
-          "131 to 150",
-          "151 to 170",
-          "Above 170"
+          "Very Low Price (≤5%)",
+          "Low Price (5–7%)",
+          "Moderate Price (7–9%)",
+          "High Price (9–11%)",
+          "Very High Price (>11%)"
         ],
-        "range": [
-          "#deebf7",
-          "#c6dbef",
-          "#9ecae1",
-          "#6baed6",
-          "#4292c6",
-          "#2171b5",
-          "#084594"  
-        ]
+        "range": ["#deebf7", "#c6dbef", "#9ecae1", "#3182bd", "#08519c"]
       },
       "legend": {
-        "title": "House Affordability Index",
-        "titleFontSize": 18,
-        "labelFontSize": 14,
-        "symbolSize": 200,
-        "orient": "top-right",
+        "title": "Relative House Price (%)",
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "symbolSize": 500,
+        "orient": "bottom",
+        "direction": "horizontal",
         "offset": 20,
         "padding": 10
       }
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "HAI", "type": "quantitative", "format": ".2f", "title": "HAI"},
-      {"field": "HAI_cat", "type": "nominal", "title": "Category"}
+      {
+        "field": "Relative House Price (%)",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Relative House Price (%)"
+      },
+      {"field": "Price_Level", "type": "nominal", "title": "Price Category"}
     ]
   }
 }
